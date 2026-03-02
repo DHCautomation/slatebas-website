@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 80" fill="white">
+  <!-- Stacked layers icon -->
+  <g transform="translate(6, 4)">
+    <path d="M35 68 L0 52 L35 36 L70 52 Z" opacity="0.3"/>
+    <path d="M35 56 L0 40 L35 24 L70 40 Z" opacity="0.5"/>
+    <path d="M35 44 L0 28 L35 12 L70 28 Z" opacity="0.75"/>
+    <path d="M35 32 L0 16 L35 0 L70 16 Z" opacity="1.0"/>
+  </g>
+  <text x="94" y="56" font-family="'DM Sans','Helvetica Neue',sans-serif" font-size="44" font-weight="700" letter-spacing="-0.02em">SlateBAS</text>
+</svg>

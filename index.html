@@ -44,7 +44,6 @@
     overflow-x: hidden;
   }
 
-  /* ─── NOISE OVERLAY ─── */
   body::before {
     content: '';
     position: fixed;
@@ -55,12 +54,9 @@
     z-index: 9999;
   }
 
-  /* ─── NAV ─── */
   nav {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     z-index: 100;
     padding: 0 3rem;
     height: 64px;
@@ -72,26 +68,10 @@
     border-bottom: 1px solid rgba(59, 130, 246, 0.06);
   }
 
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    text-decoration: none;
-  }
+  .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+  .logo img { height: 34px; width: auto; filter: brightness(1.1); }
 
-  .logo img {
-    height: 34px;
-    width: auto;
-    filter: brightness(1.1);
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-    align-items: center;
-  }
-
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
   .nav-links a {
     color: var(--slate-400);
     text-decoration: none;
@@ -100,8 +80,15 @@
     transition: color 0.2s;
     letter-spacing: 0.02em;
   }
-
   .nav-links a:hover { color: var(--slate-100); }
+
+  .nav-gc {
+    color: var(--cyan) !important;
+    font-family: var(--font-mono);
+    font-size: 0.78rem !important;
+    letter-spacing: 0.04em !important;
+  }
+  .nav-gc:hover { color: white !important; }
 
   .nav-cta {
     padding: 0.5rem 1.3rem !important;
@@ -112,14 +99,12 @@
     transition: all 0.25s !important;
     box-shadow: 0 0 20px rgba(59, 130, 246, 0.2), inset 0 1px 0 rgba(255,255,255,0.1);
   }
-
   .nav-cta:hover {
     background: var(--accent-hot) !important;
     box-shadow: 0 0 32px rgba(59, 130, 246, 0.35) !important;
     transform: translateY(-1px);
   }
 
-  /* ─── HERO ─── */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -131,20 +116,16 @@
     position: relative;
   }
 
-  /* Radial glow */
   .hero::before {
     content: '';
     position: absolute;
-    top: -10%;
-    left: 50%;
+    top: -10%; left: 50%;
     transform: translateX(-50%);
-    width: 1000px;
-    height: 900px;
+    width: 1000px; height: 900px;
     background: radial-gradient(ellipse 60% 50%, rgba(59, 130, 246, 0.07) 0%, rgba(29, 78, 216, 0.02) 40%, transparent 70%);
     pointer-events: none;
   }
 
-  /* Grid */
   .hero::after {
     content: '';
     position: absolute;
@@ -176,8 +157,7 @@
 
   .hero-badge::before {
     content: '';
-    width: 7px;
-    height: 7px;
+    width: 7px; height: 7px;
     background: var(--green);
     border-radius: 50%;
     animation: pulse 2.5s ease-in-out infinite;
@@ -277,7 +257,6 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* ─── TERMINAL ─── */
   .terminal-wrap {
     width: 100%;
     max-width: 720px;
@@ -307,13 +286,7 @@
     border-bottom: 1px solid var(--slate-700);
   }
 
-  .terminal-dot {
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    background: var(--slate-700);
-  }
-
+  .terminal-dot { width: 11px; height: 11px; border-radius: 50%; background: var(--slate-700); }
   .terminal-dot:nth-child(1) { background: #ef4444; }
   .terminal-dot:nth-child(2) { background: #fbbf24; }
   .terminal-dot:nth-child(3) { background: #22c55e; }
@@ -341,6 +314,7 @@
   .terminal-body .val { color: var(--green); font-weight: 500; }
   .terminal-body .device { color: var(--cyan); }
   .terminal-body .warn { color: var(--amber); }
+  .terminal-body .separator { color: var(--slate-700); user-select: none; }
 
   .terminal-line {
     opacity: 0;
@@ -352,17 +326,7 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .terminal-body .separator {
-    color: var(--slate-700);
-    user-select: none;
-  }
-
-  /* ─── PROTOCOLS ─── */
-  .protocols {
-    padding: 5rem 2rem 3rem;
-    text-align: center;
-  }
-
+  .protocols { padding: 5rem 2rem 3rem; text-align: center; }
   .protocols h2 {
     font-size: 0.8rem;
     font-weight: 600;
@@ -404,33 +368,11 @@
     box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
   }
 
-  .protocol-chip .dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--green);
-    flex-shrink: 0;
-  }
+  .protocol-chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+  .protocol-chip .dot.soon { background: var(--amber); }
+  .protocol-chip .tag-soon { font-size: 0.65rem; color: var(--amber); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
 
-  .protocol-chip .dot.soon {
-    background: var(--amber);
-  }
-
-  .protocol-chip .tag-soon {
-    font-size: 0.65rem;
-    color: var(--amber);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 600;
-  }
-
-  /* ─── FEATURES ─── */
-  .features {
-    padding: 6rem 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: center;
-  }
+  .features { padding: 6rem 2rem; max-width: 1100px; margin: 0 auto; text-align: center; }
 
   .section-label {
     font-family: var(--font-mono);
@@ -480,9 +422,7 @@
   .feature-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
     opacity: 0;
@@ -498,8 +438,7 @@
   .feature-card:hover::before { opacity: 1; }
 
   .feature-icon {
-    width: 44px;
-    height: 44px;
+    width: 44px; height: 44px;
     background: var(--accent-glow);
     border: 1px solid rgba(59, 130, 246, 0.15);
     border-radius: 10px;
@@ -510,36 +449,16 @@
     font-size: 1.15rem;
   }
 
-  .feature-card h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--slate-100);
-    margin-bottom: 0.6rem;
-    letter-spacing: -0.01em;
-  }
+  .feature-card h3 { font-size: 1rem; font-weight: 600; color: var(--slate-100); margin-bottom: 0.6rem; letter-spacing: -0.01em; }
+  .feature-card p { font-size: 0.88rem; color: var(--slate-400); line-height: 1.7; font-weight: 300; }
 
-  .feature-card p {
-    font-size: 0.88rem;
-    color: var(--slate-400);
-    line-height: 1.7;
-    font-weight: 300;
-  }
-
-  /* ─── LIVE DEMO SECTION ─── */
-  .live-demo {
-    padding: 5rem 2rem;
-    text-align: center;
-    position: relative;
-  }
-
+  .live-demo { padding: 5rem 2rem; text-align: center; position: relative; }
   .live-demo::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    width: 700px;
-    height: 500px;
+    width: 700px; height: 500px;
     background: radial-gradient(circle, rgba(59, 130, 246, 0.04) 0%, transparent 70%);
     pointer-events: none;
   }
@@ -591,13 +510,7 @@
   .api-card-body .num { color: var(--amber); }
   .api-card-body .brace { color: var(--slate-500); }
 
-  /* ─── DEPLOY ─── */
-  .deploy {
-    padding: 6rem 2rem;
-    text-align: center;
-    position: relative;
-  }
-
+  .deploy { padding: 6rem 2rem; text-align: center; position: relative; }
   .deploy h2 {
     font-size: clamp(2rem, 4.5vw, 3.2rem);
     font-weight: 700;
@@ -606,23 +519,9 @@
     line-height: 1.1;
     margin-bottom: 1.25rem;
   }
+  .deploy > p { color: var(--slate-400); font-size: 1.05rem; max-width: 480px; margin: 0 auto 3rem; font-weight: 300; }
 
-  .deploy > p {
-    color: var(--slate-400);
-    font-size: 1.05rem;
-    max-width: 480px;
-    margin: 0 auto 3rem;
-    font-weight: 300;
-  }
-
-  .deploy-steps {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    max-width: 800px;
-    margin: 0 auto;
-  }
+  .deploy-steps { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
 
   .deploy-step {
     display: flex;
@@ -637,14 +536,10 @@
     transition: all 0.25s;
   }
 
-  .deploy-step:hover {
-    border-color: rgba(59, 130, 246, 0.2);
-    transform: translateY(-2px);
-  }
+  .deploy-step:hover { border-color: rgba(59, 130, 246, 0.2); transform: translateY(-2px); }
 
   .deploy-step .num {
-    width: 28px;
-    height: 28px;
+    width: 28px; height: 28px;
     background: var(--accent-glow);
     border: 1px solid rgba(59, 130, 246, 0.15);
     border-radius: 7px;
@@ -659,21 +554,13 @@
 
   .deploy-step code { color: var(--slate-200); }
 
-  /* ─── CTA ─── */
-  .cta-section {
-    padding: 6rem 2rem 4rem;
-    text-align: center;
-    position: relative;
-  }
-
+  .cta-section { padding: 6rem 2rem 4rem; text-align: center; position: relative; }
   .cta-section::before {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 50%;
+    bottom: 0; left: 50%;
     transform: translateX(-50%);
-    width: 800px;
-    height: 600px;
+    width: 800px; height: 600px;
     background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
     pointer-events: none;
   }
@@ -687,18 +574,10 @@
     margin-bottom: 1.25rem;
   }
 
-  .cta-section p {
-    color: var(--slate-400);
-    font-size: 1.05rem;
-    max-width: 520px;
-    margin: 0 auto 2.5rem;
-    font-weight: 300;
-    line-height: 1.7;
-  }
+  .cta-section p { color: var(--slate-400); font-size: 1.05rem; max-width: 520px; margin: 0 auto 2.5rem; font-weight: 300; line-height: 1.7; }
 
-  /* ─── FOOTER ─── */
   footer {
-    padding: 3rem 3rem;
+    padding: 3rem;
     border-top: 1px solid var(--slate-800);
     display: flex;
     justify-content: space-between;
@@ -709,49 +588,17 @@
     gap: 1rem;
   }
 
-  .footer-left {
-    font-size: 0.78rem;
-    color: var(--slate-500);
-  }
-
-  .footer-left a {
-    color: var(--slate-400);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
+  .footer-left { font-size: 0.78rem; color: var(--slate-500); }
+  .footer-left a { color: var(--slate-400); text-decoration: none; transition: color 0.2s; }
   .footer-left a:hover { color: var(--slate-200); }
 
-  .footer-right {
-    display: flex;
-    gap: 2rem;
-  }
-
-  .footer-right a {
-    font-size: 0.78rem;
-    color: var(--slate-500);
-    text-decoration: none;
-    transition: color 0.2s;
-    font-family: var(--font-mono);
-    letter-spacing: 0.02em;
-  }
-
+  .footer-right { display: flex; gap: 2rem; }
+  .footer-right a { font-size: 0.78rem; color: var(--slate-500); text-decoration: none; transition: color 0.2s; font-family: var(--font-mono); letter-spacing: 0.02em; }
   .footer-right a:hover { color: var(--slate-300); }
 
-  /* ─── DIVIDER ─── */
-  .section-divider {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--slate-700), transparent);
-  }
+  .section-divider { width: 100%; max-width: 1100px; margin: 0 auto; height: 1px; background: linear-gradient(90deg, transparent, var(--slate-700), transparent); }
 
-  /* ─── RESPONSIVE ─── */
-  @media (max-width: 900px) {
-    .feature-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-
+  @media (max-width: 900px) { .feature-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 768px) {
     nav { padding: 0 1.5rem; }
     .nav-links { gap: 1.25rem; }
@@ -774,19 +621,20 @@
     <li><a href="#features">Features</a></li>
     <li><a href="#protocols">Protocols</a></li>
     <li><a href="#api">API</a></li>
+    <li><a href="https://groundcontrol.dhcautomation.ca" class="nav-gc">Ground Control ↗</a></li>
     <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
   </ul>
 </nav>
 
 <section class="hero">
-  <div class="hero-badge">Now in Development</div>
+  <div class="hero-badge">Beta v1.0.0 — Now Available</div>
   <h1>Building Automation,<br><span class="accent">Rebuilt.</span></h1>
   <p class="hero-sub">
     A lean, open-core BAS platform built for controls professionals.
     BACnet. Modbus. Dashboards. One folder. Zero bloat.
   </p>
   <div class="hero-actions">
-    <a href="#contact" class="btn-primary">Request Early Access →</a>
+    <a href="https://groundcontrol.dhcautomation.ca/download" class="btn-primary">Download SlateBAS →</a>
     <a href="#features" class="btn-ghost">See What's Inside</a>
   </div>
 
@@ -800,14 +648,16 @@
       </div>
       <div class="terminal-body">
         <div class="terminal-line" style="animation-delay:0.6s"><span class="dim">$</span> <span class="cmd">java -jar slatebas.jar</span></div>
-        <div class="terminal-line" style="animation-delay:0.9s"><span class="info">▸</span> SlateBAS v1.0 starting on port <span class="val">9090</span></div>
-        <div class="terminal-line" style="animation-delay:1.2s"><span class="info">▸</span> Loading module: <span class="val">DHC BACnet/IP</span> v1.0.0</div>
-        <div class="terminal-line" style="animation-delay:1.5s"><span class="info">▸</span> Loading module: <span class="val">DHC Modbus TCP</span> v1.0.0</div>
-        <div class="terminal-line" style="animation-delay:1.8s"><span class="info">▸</span> BACnet LocalDevice initialized — instance <span class="val">1001</span></div>
-        <div class="terminal-line" style="animation-delay:2.1s"><span class="info">▸</span> WhoIs broadcast → <span class="device">12 devices</span> discovered</div>
-        <div class="terminal-line" style="animation-delay:2.4s"><span class="info">▸</span> <span class="device">device 31415</span> — 4 objects: AI×2, AV×1, DEV×1</div>
-        <div class="terminal-line" style="animation-delay:2.7s"><span class="separator">────────────────────────────────────────────────────</span></div>
-        <div class="terminal-line" style="animation-delay:3.0s"><span class="info">▸</span> Points: <span class="val">4,218</span> &nbsp;│&nbsp; Poll: <span class="val">15s</span> &nbsp;│&nbsp; Uptime: <span class="val">14d 7h</span> &nbsp;│&nbsp; <span class="val">Ready</span></div>
+        <div class="terminal-line" style="animation-delay:0.9s"><span class="info">▸</span> SlateBAS <span class="val">v1.0.0-beta</span> starting on port <span class="val">9090</span></div>
+        <div class="terminal-line" style="animation-delay:1.2s"><span class="info">▸</span> Loading module: <span class="val">DHC BACnet/IP</span> v1.0.0-beta</div>
+        <div class="terminal-line" style="animation-delay:1.5s"><span class="info">▸</span> Loading module: <span class="val">DHC Modbus TCP</span> v1.0.0-beta</div>
+        <div class="terminal-line" style="animation-delay:1.7s"><span class="info">▸</span> Loading module: <span class="val">DHC Schedule Commander</span> v1.0.0-beta</div>
+        <div class="terminal-line" style="animation-delay:1.9s"><span class="info">▸</span> Loading module: <span class="val">DHC Equipment Model</span> v1.0.0-beta</div>
+        <div class="terminal-line" style="animation-delay:2.2s"><span class="info">▸</span> BACnet LocalDevice initialized — instance <span class="val">1001</span></div>
+        <div class="terminal-line" style="animation-delay:2.5s"><span class="info">▸</span> WhoIs broadcast → <span class="device">12 devices</span> discovered</div>
+        <div class="terminal-line" style="animation-delay:2.8s"><span class="info">▸</span> Heartbeat → <span class="device">groundcontrol.dhcautomation.ca</span> ✓</div>
+        <div class="terminal-line" style="animation-delay:3.1s"><span class="separator">────────────────────────────────────────────────────</span></div>
+        <div class="terminal-line" style="animation-delay:3.4s"><span class="info">▸</span> Points: <span class="val">4,218</span> &nbsp;│&nbsp; Poll: <span class="val">15s</span> &nbsp;│&nbsp; Uptime: <span class="val">14d 7h</span> &nbsp;│&nbsp; <span class="val">Ready</span></div>
       </div>
     </div>
   </div>
@@ -852,7 +702,12 @@
     <div class="feature-card">
       <div class="feature-icon">📦</div>
       <h3>Single-Folder Deploy</h3>
-      <p>Copy the folder. Install Java. Run start.bat. No Docker, no external databases, no infrastructure team required.</p>
+      <p>Download from Ground Control. Run install.sh. Done. No Docker, no external databases, no infrastructure team.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🛰️</div>
+      <h3>Fleet Operations</h3>
+      <p>Monitor every site from one dashboard. Health scores, active alarms, module versions, and remote updates via Ground Control.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">🔌</div>
@@ -860,9 +715,19 @@
       <p>Full programmatic access to every data source, point, event, and dashboard. Automate deployments across sites.</p>
     </div>
     <div class="feature-card">
+      <div class="feature-icon">📅</div>
+      <h3>Schedule Commander</h3>
+      <p>Weekly schedules, exception days, direct point commanding, startup reconciliation, and override management built in.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">☁️</div>
+      <h3>Weather & Solar</h3>
+      <p>Live weather data, HDD/CDD calculations, sunrise/sunset, and solar angle — all integrated for smarter scheduling.</p>
+    </div>
+    <div class="feature-card">
       <div class="feature-icon">🔄</div>
-      <h3>V3 Migration</h3>
-      <p>Import existing Mango v3 configurations. Map old data sources to new modules automatically. No rip-and-replace.</p>
+      <h3>Remote Updates</h3>
+      <p>Push module updates to field sites without a site visit. Tech clicks Check for Upgrades — done. Safe, controlled, no downtime.</p>
     </div>
   </div>
 </section>
@@ -900,15 +765,19 @@
   <div class="deploy-steps">
     <div class="deploy-step">
       <div class="num">1</div>
-      <code>unzip slatebas.zip</code>
+      <code>Download from Ground Control</code>
     </div>
     <div class="deploy-step">
       <div class="num">2</div>
-      <code>./start.bat</code>
+      <code>./install-linux.sh</code>
     </div>
     <div class="deploy-step">
       <div class="num">3</div>
       <code>open localhost:9090</code>
+    </div>
+    <div class="deploy-step">
+      <div class="num">4</div>
+      <code>Configure heartbeat → live</code>
     </div>
   </div>
 </section>
@@ -916,8 +785,8 @@
 <section class="cta-section" id="contact">
   <div class="section-label">Early Access</div>
   <h2>Built in Ottawa.<br>Deployed everywhere.</h2>
-  <p>SlateBAS is in active development by DHC Automation and Controls Ltd. Interested in early access or partnership?</p>
-  <a href="/cdn-cgi/l/email-protection#e881868e87a88c808b899d9c8785899c818786c68b89" class="btn-primary" style="font-size:0.95rem;"><span class="__cf_email__" data-cfemail="375e59515877535f54564243585a56435e5859195456">[email&#160;protected]</span> →</a>
+  <p>SlateBAS v1.0.0-beta is available now. Contact us to get access to Ground Control and deploy your first site today.</p>
+  <a href="mailto:info@dhcautomation.ca" class="btn-primary" style="font-size:0.95rem;">info@dhcautomation.ca →</a>
 </section>
 
 <footer>
@@ -925,4 +794,11 @@
     © 2026 <a href="https://dhcautomation.ca">DHC Automation and Controls Ltd.</a> — Ottawa, Canada
   </div>
   <div class="footer-right">
-    <a href="/cdn-
+    <a href="https://groundcontrol.dhcautomation.ca">Ground Control</a>
+    <a href="https://github.com/DHCautomation">GitHub</a>
+    <a href="mailto:info@dhcautomation.ca">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
